@@ -1,3 +1,4 @@
+import 'package:devetechnologies_flutter_course/layouts/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyFirstWidget(),
-    );
+        debugShowCheckedModeBanner: false,
+        home: ProfileScreen() //MyFirstWidget(),
+        );
   }
 }
 
