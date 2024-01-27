@@ -1,5 +1,6 @@
 import 'package:devetechnologies_flutter_course/expanded-widget/expanded_example.dart';
 import 'package:devetechnologies_flutter_course/layouts/profile_screen.dart';
+import 'package:devetechnologies_flutter_course/manage-state/stop_count.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: ExpandedExample() //ProfileScreen() //MyFirstWidget(),
+        home:
+            StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
         );
   }
 }
