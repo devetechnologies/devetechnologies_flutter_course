@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -8,18 +9,24 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Profile Screen'),
-      ),
-      body: Column(
+      body: Stack(
         children: [
-          const SizedBox(
-            height: 10,
+          Image.asset(
+            'assets/images/landscape.jpg',
           ),
-          _buildProfileImage(),
-          _buildProfilDetails(),
-          _buildProfileActions()
+          Transform.translate(
+            offset: const Offset(0, 100),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                _buildProfileImage(),
+                _buildProfilDetails(),
+                _buildProfileActions()
+              ],
+            ),
+          )
         ],
       ),
     );
@@ -50,6 +57,7 @@ class ProfileScreen extends StatelessWidget {
             'Manuel Montolio',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+          _ratingBar(),
           const SizedBox(
             height: 10,
           ),
@@ -57,6 +65,24 @@ class ProfileScreen extends StatelessWidget {
           _buildDetaillRow('Experience', '12')
         ],
       ),
+    );
+  }
+
+  RatingBar _ratingBar() {
+    return RatingBar.builder(
+      initialRating: 5,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemCount: 5,
+      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+      itemBuilder: (context, _) => const Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
+      onRatingUpdate: (rating) {
+        print(rating);
+      },
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:devetechnologies_flutter_course/expanded-widget/expanded_example.dart';
 import 'package:devetechnologies_flutter_course/layouts/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: ProfileScreen() //MyFirstWidget(),
+        home: ExpandedExample() //ProfileScreen() //MyFirstWidget(),
         );
   }
 }
