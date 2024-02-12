@@ -15,6 +15,8 @@ class _StopCounterStateState extends State<StopCounterState> {
   bool isClick = true;
   int milliseconds = 0;
   final listSeconds = <int>[];
+  final scrollController = ScrollController();
+  final itemHeig = 60.0;
 
   @override
   void initState() {
@@ -67,6 +69,8 @@ class _StopCounterStateState extends State<StopCounterState> {
   }
 
   void addValueListSeconds() {
+    scrollController.animateTo(itemHeig * listSeconds.length,
+        duration: const Duration(microseconds: 500), curve: Curves.easeIn);
     setState(() {
       listSeconds.add(milliseconds);
       milliseconds = 0;
@@ -130,13 +134,16 @@ class _StopCounterStateState extends State<StopCounterState> {
   }
 
   Widget _buildCountList() {
-    return ListView(
-      children: [
-        for (int microseconds in listSeconds)
-          ListTile(
-            title: Text(_secondText(microseconds)),
-          )
-      ],
+    return ListView.builder(
+      itemCount: listSeconds.length,
+      controller: scrollController,
+      itemExtent: itemHeig,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text('Count seconds ${index + 1}'),
+          trailing: Text(_secondText(milliseconds)),
+        );
+      },
     );
   }
 }
