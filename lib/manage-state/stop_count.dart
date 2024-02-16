@@ -3,7 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class StopCounterState extends StatefulWidget {
-  const StopCounterState({super.key});
+  final String appBarName;
+  final String email;
+
+  const StopCounterState(
+      {super.key, required this.appBarName, required this.email});
 
   @override
   State<StopCounterState> createState() => _StopCounterStateState();
@@ -38,6 +42,13 @@ class _StopCounterStateState extends State<StopCounterState> {
     });
   }
 
+  @override
+  void dispose() {
+    timer!.cancel();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   void _restartCount() {
     timer = Timer.periodic(const Duration(microseconds: 100), _runing);
     listSeconds.clear();
@@ -57,7 +68,7 @@ class _StopCounterStateState extends State<StopCounterState> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('State Manage'),
+        title: Text(widget.appBarName),
       ),
       body: Column(
         children: [

@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:devetechnologies_flutter_course/manage-state/stop_count.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -42,8 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     return 'Enter your Email';
                   }
                   final regex = RegExp('[^@]+@[^.]+..+');
-                  if (regex.hasMatch(value)) {
-                    return null;
+                  if (!regex.hasMatch(value)) {
+                    return 'Incorrect email';
                   }
                   return null;
                 },
@@ -66,5 +69,12 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!form!.validate()) {
       return;
     }
+
+    final name = _nameController.text;
+    final email = _emialController.text;
+
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => StopCounterState(appBarName: name, email: email),
+    ));
   }
 }
