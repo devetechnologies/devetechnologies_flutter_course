@@ -1,4 +1,5 @@
 import 'package:devetechnologies_flutter_course/form/login_screen.dart';
+import 'package:devetechnologies_flutter_course/routes.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
@@ -11,10 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: LoginScreen()
-        //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
-        );
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: routes,
+      initialRoute: LoginScreen.routName,
+      //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
+    );
   }
 }
 

@@ -3,11 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class StopCounterState extends StatefulWidget {
-  final String appBarName;
-  final String email;
+  static String routName = '/stop-count-screen';
 
-  const StopCounterState(
-      {super.key, required this.appBarName, required this.email});
+  const StopCounterState({super.key});
 
   @override
   State<StopCounterState> createState() => _StopCounterStateState();
@@ -65,10 +63,11 @@ class _StopCounterStateState extends State<StopCounterState> {
 
   @override
   Widget build(BuildContext context) {
+    final name = ModalRoute.of(context)!.settings.arguments ?? "";
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(widget.appBarName),
+        title: Text(name.toString()),
       ),
       body: Column(
         children: [

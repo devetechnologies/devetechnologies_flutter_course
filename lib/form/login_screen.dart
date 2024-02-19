@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:devetechnologies_flutter_course/manage-state/stop_count.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  static String routName = '/login-screen';
   const LoginScreen({super.key});
 
   @override
@@ -73,8 +72,6 @@ class _LoginScreenState extends State<LoginScreen> {
     final name = _nameController.text;
     final email = _emialController.text;
 
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => StopCounterState(appBarName: name, email: email),
-    ));
+    Navigator.of(context).pushNamed(StopCounterState.routName, arguments: name);
   }
 }
