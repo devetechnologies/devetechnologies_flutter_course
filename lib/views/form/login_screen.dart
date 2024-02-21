@@ -1,5 +1,6 @@
-import 'package:devetechnologies_flutter_course/manage-state/stop_count.dart';
 import 'package:flutter/material.dart';
+
+import '../manage-state/stop_count.dart';
 
 class LoginScreen extends StatefulWidget {
   static String routName = '/login-screen';

@@ -1,5 +1,5 @@
-import 'package:devetechnologies_flutter_course/form/login_screen.dart';
-import 'package:devetechnologies_flutter_course/routes.dart';
+import 'package:devetechnologies_flutter_course/helpers/routes.dart';
+import 'package:devetechnologies_flutter_course/views/plan/plan_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: routes,
-      initialRoute: LoginScreen.routName,
-      //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
-    );
+        debugShowCheckedModeBanner: false,
+        routes: routes,
+        initialRoute: PlanScreen.routName //LoginScreen.routName,
+        //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
+        );
   }
 }
 
