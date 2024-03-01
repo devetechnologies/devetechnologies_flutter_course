@@ -1,5 +1,5 @@
 import 'package:devetechnologies_flutter_course/helpers/routes.dart';
-import 'package:devetechnologies_flutter_course/views/plan/plan_screen.dart';
+import 'package:devetechnologies_flutter_course/views/futures/home_future_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: routes,
-        initialRoute: PlanScreen.routName //LoginScreen.routName,
+        initialRoute: HomeFutureScreen.routName //LoginScreen.routName,
         //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
         );
   }
