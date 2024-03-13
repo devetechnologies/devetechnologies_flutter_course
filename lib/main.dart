@@ -1,5 +1,5 @@
 import 'package:devetechnologies_flutter_course/helpers/routes.dart';
-import 'package:devetechnologies_flutter_course/views/products/product_screen.dart';
+import 'package:devetechnologies_flutter_course/views/stream/stream_home_scree.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: routes,
-        initialRoute: ProductScreen.routName //LoginScreen.routName,
+        initialRoute: StreamHomeScreen
+            .routName //ProductScreen.routName //LoginScreen.routName,
         //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
         );
   }
