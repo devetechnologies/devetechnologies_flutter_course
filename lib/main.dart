@@ -1,3 +1,4 @@
+import 'package:devetechnologies_flutter_course/bloc/counter_bloc.dart';
 import 'package:devetechnologies_flutter_course/cubit/counter_cubit.dart';
 import 'package:devetechnologies_flutter_course/helpers/routes.dart';
 import 'package:devetechnologies_flutter_course/views/bloc_screen/bloc_counter_screen.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CounterCubit(),
+      create: (context) => CounterBloc(),
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
           routes: routes,
