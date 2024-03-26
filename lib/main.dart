@@ -1,8 +1,12 @@
+import 'package:devetechnologies_flutter_course/cubit/counter_cubit.dart';
 import 'package:devetechnologies_flutter_course/helpers/routes.dart';
+import 'package:devetechnologies_flutter_course/views/bloc_screen/bloc_counter_screen.dart';
 import 'package:devetechnologies_flutter_course/views/stream/stream_home_scree.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: routes,
-        initialRoute: StreamHomeScreen
-            .routName //ProductScreen.routName //LoginScreen.routName,
-        //StopCounterState() //ExpandedExample() //ProfileScreen() //MyFirstWidget(),
-        );
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          routes: routes,
+          initialRoute: BlocCounterScreen.routName),
+    );
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:devetechnologies_flutter_course/views/bloc_screen/bloc_counter_screen.dart';
 import 'package:devetechnologies_flutter_course/views/futures/future_builder_screen.dart';
 import 'package:devetechnologies_flutter_course/views/futures/home_future_screen.dart';
 import 'package:devetechnologies_flutter_course/views/plan/plan_screen.dart';
@@ -15,5 +16,6 @@ final Map<String, WidgetBuilder> routes = {
   HomeFutureScreen.routName: (context) => const HomeFutureScreen(),
   FutureBuilderScreen.routName: (context) => const FutureBuilderScreen(),
   ProductScreen.routName: (context) => const ProductScreen(),
-  StreamHomeScreen.routName: (context) => const StreamHomeScreen()
+  StreamHomeScreen.routName: (context) => const StreamHomeScreen(),
+  BlocCounterScreen.routName: (context) => const BlocCounterScreen()
 };
